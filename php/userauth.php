@@ -112,5 +112,11 @@ function getusers(){
      $conn = db();
      //delete user with the given id from the database
      $sql="DELETE FROM students WHERE id='$id'";
+     if (!mysqli_query($conn,$sql))
+{
+die('Error: ' . mysqli_error($conn));
+}
+echo "User Deleted";
+header("location: /userAuthMySQL/dashboard.php");
      $conn->close();
  }
