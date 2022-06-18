@@ -62,7 +62,16 @@ function resetPassword($email, $password){
     $select = mysqli_query($conn, "SELECT * FROM students WHERE email = '$email'");
     if(mysqli_num_rows($select)) {
         $sql="UPDATE students SET password='$password' WHERE email = '$email' ";
+        if(mysqli_query( $conn,$sql))
+{  
+echo "Data Updated successfully.<br>";  
+}
+else
+{  
+echo "Data Updation Failed; ".mysqli_error($conn);  
+}  
     }
+    else{echo 'User does not exist';}
     $conn->close();
     //if it does, replace the password with $password given
 }
