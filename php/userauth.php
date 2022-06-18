@@ -64,11 +64,11 @@ function resetPassword($email, $password){
         $sql="UPDATE students SET password='$password' WHERE email = '$email' ";
         if(mysqli_query( $conn,$sql))
 {  
-echo "Data Updated successfully.<br>";  
+echo "Password Updated successfully.<br>";  
 }
 else
 {  
-echo "Data Updation Failed; ".mysqli_error($conn);  
+echo "Password Updation Failed; ".mysqli_error($conn);  
 }  
     }
     else{echo 'User does not exist';}
