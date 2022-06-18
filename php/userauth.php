@@ -46,7 +46,7 @@ function loginUser($email, $password){
            
            header("location: /userAuthMySQL/dashboard.php");
         }else {
-            header("location: /userAuthMySQL/login.php");        }
+            header("location: /userAuthMySQL/forms/login.html");        }
     }
     $conn->close();
     //if it does, check if the password is the same with what is given
